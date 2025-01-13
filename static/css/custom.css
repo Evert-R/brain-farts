@@ -1,0 +1,537 @@
+body {
+    background-color: bisque;
+}
+
+input,
+select {
+    width: 100%;
+    height: 1.8rem;
+}
+
+audio {
+    width: 100%;
+}
+
+.all-farts-view .custom-checkbox {
+    display: inline-block;
+}
+
+.all-farts-view .custom-checkbox input {
+    width: auto;
+}
+
+.all-farts-view .custom-checkbox label {
+    border-style: none;
+}
+
+.all-farts-view .col-form-label {
+    display: none;
+}
+
+button {
+    width: 90%;
+}
+
+p {}
+
+article {
+    min-height: 100vh;
+    width: 100vw;
+    background-color: bisque;
+    font-size: 0.8rem;
+    letter-spacing: 0.1rem;
+    color: rgba(0, 0, 0)!important;
+}
+
+a {
+    color: rgba(0, 0, 0)!important;
+    text-decoration: none;
+}
+
+h1 {
+    padding-top: 0.5rem;
+    text-align: right;
+    font-size: 0.9rem;
+    font-weight: 300;
+    letter-spacing: 0.7rem;
+    color: rgba(102, 74, 39, 1);
+    padding-right: 0.1rem;
+    text-shadow: 3px 2px 2px #dfa866;
+}
+
+hr {
+    color: rgba(102, 74, 39, 1);
+    height: 2px!important;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    width: 60%;
+    margin-left: auto;
+    display: block;
+}
+
+h3 {
+    font-size: 0.8rem;
+    padding: 0;
+    margin: 0;
+}
+
+h4 {
+    letter-spacing: 0.3rem;
+    font-size: 0.8rem;
+    padding: 0 0 0 1.2rem;
+    margin: 0;
+    text-align: left;
+}
+
+.all-farts-view {
+    padding-top: 4rem;
+}
+
+.single-fart-view {
+    padding-top: 6rem;
+}
+
+.single-fart-view article {
+    padding-bottom: 3rem;
+}
+
+.single-fart-view .fart-date {
+    margin-bottom: 2rem;
+}
+
+.single-fart-view h3 {
+    font-size: 1rem;
+    text-align: right;
+}
+
+.farts-top {
+    height: 4rem;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    left: 0;
+    background-color: bisque;
+    z-index: +1;
+}
+
+#add-fart {
+    padding-top: 4rem;
+}
+
+#top-brain-farts {
+    color: rgba(223, 168, 102, 1);
+    font-size: 0.85rem;
+    letter-spacing: 0.5rem;
+    font-weight: 500;
+    position: fixed;
+    top: 1.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#fart-down-button i {
+    color: rgba(102, 74, 39, 1);
+    font-size: 2rem;
+    position: fixed;
+    top: 1rem;
+    left: 6vw;
+}
+
+#fart-right-button i {
+    color: rgba(102, 74, 39, 1);
+    font-size: 2rem;
+    position: fixed;
+    top: 1rem;
+    right: 6vw;
+}
+
+#add-fart-button i {
+    color: rgba(102, 74, 39, 1);
+    font-size: 2rem;
+    position: fixed;
+    top: 1rem;
+    right: 6vw;
+    z-index: 5000;
+}
+
+#fart-delete-button {
+    color: rgba(102, 74, 39, 1);
+    font-size: 2rem;
+    position: fixed;
+    bottom: 1rem;
+    right: 6vw;
+}
+
+.delete-button {
+    color: rgba(255, 228, 196, 1);
+    font-size: 1.2rem;
+    position: relative;
+    top: 0.1rem;
+    left: 93%;
+}
+
+#fart-back-button i {
+    color: rgba(102, 74, 39, 1);
+    font-size: 2rem;
+    position: absolute;
+    top: calc(100vh - 3.5rem);
+    left: 6vw;
+}
+
+#add-fart-type {
+    color: rgba(223, 168, 102, 1);
+    font-size: 0.85rem;
+    letter-spacing: 0.35rem;
+    font-weight: 500;
+    position: absolute;
+    top: 1.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#add-fart-type a {
+    color: rgba(223, 168, 102, 1);
+}
+
+#current-fart-type {
+    overflow: hidden;
+    height: 0px;
+}
+
+input[type=radio] {
+    height: 0px;
+    opacity: 0;
+}
+
+input[type=file]::file-selector-button {
+    margin-right: 1rem;
+    border-radius: 0.3rem;
+    background-color: white;
+    border-width: 1px;
+    border-color: rgb(249, 207, 157);
+    box-shadow: 0px 0px;
+    border-style: solid;
+    font-size: 0.8rem;
+    letter-spacing: 0.2rem;
+    padding: 0.3rem 0.5rem;
+}
+
+input[type=file] {
+    font-size: 0.8rem;
+    letter-spacing: 0.1rem;
+}
+
+label.custom-file-label {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.1rem;
+}
+
+.custom-radio {
+    display: inline-block;
+}
+
+input[type=checkbox] {
+    display: block;
+    border-radius: 10px;
+    height: 0;
+}
+
+.custom-radio {}
+
+.custom-checkbox {
+    margin-top: 0.5rem;
+}
+
+.custom-checkbox,
+.custom-radio {
+    text-align: right;
+    float: right;
+}
+
+.custom-checkbox i,
+.custom-radio i {
+    margin-bottom: 0.5rem;
+    margin-left: 1.5rem;
+    font-size: 1.4rem;
+    color: rgba(223, 168, 102, 1);
+}
+
+i.fa-comment {}
+
+.custom-checkbox label,
+.custom-radio label {
+    display: none;
+}
+
+.custom-radio label {
+    text-align: center;
+    width: 100%;
+    background-color: rgb(227, 227, 227);
+}
+
+#div_id_category label,
+#div_id_topic label,
+#div_id_project label {
+    text-align: right;
+    letter-spacing: 0.5rem;
+    font-size: 0.8rem;
+    padding-bottom: 0.2rem;
+}
+
+#div_id_text label,
+#div_id_audio label,
+#div_id_image label,
+#div_id_link label {
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+    text-align: left;
+    letter-spacing: 0.5rem;
+    font-size: 0.9rem;
+}
+
+#div_id_title label {
+    padding-left: 1.5rem;
+    text-align: center;
+    letter-spacing: 0.6rem;
+    font-size: 0.9rem;
+    padding-bottom: 0.1rem;
+}
+
+.custom-radio label,
+.custom-checkbox label {
+    background-color: rgba(0, 0, 0, 0.65);
+    border-color: rgb(249, 207, 157);
+    border-radius: 0.3rem;
+    color: bisque;
+    font-size: 0.8rem;
+    letter-spacing: 0.3rem;
+    font-weight: 300;
+    padding: 0.2rem 0;
+}
+
+.form-control.custom-file {
+    background-color: bisque;
+}
+
+#div_id_type {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#div_id_type .col-12 {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#div_id_type label {
+    border-style: solid;
+    border-width: 1px;
+}
+
+#div_id_text {
+    display: block;
+}
+
+#div_id_audio {
+    display: none;
+}
+
+#div_id_image {
+    display: none;
+}
+
+#div_id_link {
+    display: none;
+}
+
+.type-active {
+    font-weight: 600;
+    background-color: rgba(0, 0, 0, 0.80)!important;
+}
+
+.btn-primary {
+    background-color: rgba(102, 74, 39, 1);
+    border-color: rgb(249, 207, 157);
+    border-radius: 0.3rem;
+    color: bisque;
+    letter-spacing: 0.2rem;
+    padding: 0;
+}
+
+#er-fart-filter .form-group {
+    margin-top: 0.5rem;
+}
+
+.select2-results {}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    line-height: 22px!important;
+}
+
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+    font-size: 0.8rem;
+    letter-spacing: 0.2rem;
+    font-weight: 300;
+    background-color: rgba(223, 168, 102, 1)!important;
+}
+
+.select2-selection__placeholder,
+.select2-container--default .select2-selection--single .select2-selection__rendered,
+.select2-results__option {
+    font-size: 0.8rem;
+    letter-spacing: 0.2rem;
+    font-weight: 300;
+    color: rgba(0, 0, 0)!important;
+}
+
+.er-fart-item {
+    padding: 0.3rem;
+    margin: 0.5rem 0;
+    background-color: white;
+    text-align: left;
+    border-radius: 0.3rem;
+}
+
+.fart-icon i {
+    color: rgba(102, 74, 39, 1);
+    font-size: 1rem;
+    margin-top: 0.1rem;
+    margin-left: 0.2rem;
+}
+
+.toggle-icon {
+    text-align: left;
+}
+
+.fart-title {
+    text-align: justify;
+    padding-left: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.fart-date {
+    color: #b59d80;
+    text-align: center;
+    text-align: right;
+    font-size: 0.65rem;
+}
+
+.fart-date i {
+    color: rgba(102, 74, 39, 1);
+    font-size: 0.8rem;
+    margin-left: 1rem;
+}
+
+.fart-details {
+    padding: 0 1rem 1rem 1rem;
+    height: 0px;
+    overflow: hidden;
+    text-align: left;
+}
+
+.fart-details-show {
+    height: 100%;
+}
+
+.fart-image img {
+    width: 100%;
+    height: auto;
+}
+
+.fart-link a {
+    color: rgba(0, 0, 0, 0.80);
+}
+
+.fart-text,
+.fart-audio,
+.fart-image,
+.fart-link {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.fart-image {
+    margin-bottom: 3rem;
+}
+
+.er-fart-actions {
+    height: 2rem;
+    width: 100%;
+}
+
+i.type-icon-active {
+    color: rgba(102, 74, 39, 1);
+}
+
+i.audio-icon-active {
+    color: rgba(102, 74, 39, 1);
+}
+
+i.image-icon-active {
+    color: rgba(102, 74, 39, 1);
+}
+
+i.link-icon-active {
+    color: rgba(102, 74, 39, 1);
+}
+
+.er-control {
+    float: right;
+    margin: 1.5rem;
+}
+
+.er-control i {
+    color: rgba(102, 74, 39, 1);
+    font-size: 1.4rem;
+}
+
+.single-fart-view .fart-text {
+    background-color: white;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    border-radius: 0.3rem;
+}
+
+.single-fart-view .fart-link {
+    text-align: right;
+    float: left;
+}
+
+.show-tag {
+    text-align: center;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.2rem;
+    color: rgba(0, 0, 0)!important;
+}
+
+.er-messages {
+    height: 2.8rem;
+    width: 100vw;
+    overflow: hidden;
+    transition-duration: 2s;
+    transition-property: all;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 5000;
+    color: rgba(0, 0, 0);
+    background-color: bisque;
+    text-align: center;
+}
+
+.er-messages .er-error-message {
+    padding: 1rem;
+    color: red;
+}
+
+.er-messages .er-success-message {
+    padding: 1rem;
+    color: green;
+}
+
+.select2-container--default .select2-results>.select2-results__options {
+    max-height: none!important;
+}

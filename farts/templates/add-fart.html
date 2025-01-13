@@ -1,0 +1,36 @@
+{% extends 'base.html' %} {% load static %} {% load crispy_forms_tags %} {% block content %}
+
+<!-- Add brain-fart form -->
+<section class="row">
+    <article class="col-12">
+        <div class="farts-top">
+            <div id="fart-down-button">
+                <a href="/"><i class="fa-solid fa-hand-point-left"></i></a>
+            </div>
+            <div id="add-fart-type">TEXT FART</div>
+            <div id="current-fart-type">{{ fart_type }}</div>
+        </div>
+        <form class="form-horizontal" id="add-fart" method="post" enctype="multipart/form-data">
+            <div class="row">
+
+                <div class="er-form-row">
+                    <input type="hidden" name="next" value="/"> {% crispy form form.helper %}
+                </div>
+
+            </div>
+            <div id="add-fart-button"><i class="fa-solid fa-hand-point-up"></i></div>
+        </form>
+
+
+    </article>
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+            {% endfor %}
+    </ul>
+    {% endif %}
+</section>
+
+<script src="{% static '/js/addFartEvents.js' %}"></script>
+{% endblock %}
