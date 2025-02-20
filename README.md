@@ -19,17 +19,8 @@ The UX has been designed with as less text as possible, by creating a intuitive 
 ### Deployment instructions:
 
 ##### Create a new repository
-- Create a new folder on your local machine
-- Clone the repository to the new local folder:
+- Clone the repository to a new local folder:
     - ``` git clone https://github.com/Evert-R/brain-farts ```
-- Rename the remote name:
-    - ``` git remote rename origin destination ```
-- Check if this was successfull:
-    - ``` git remote -v ```
-- Assign a new remote:
-    - ``` git remote add origin <url of the new repository>```
-- Push the local repository to the new remote:
-    - ``` git push origin master ```
 
 ##### Environment variables
 - In the root folder create a new file named: ```env.py```
