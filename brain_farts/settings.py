@@ -34,16 +34,10 @@ else:
     DEBUG = False
 
 ALLOWED_HOSTS = [
-    '192.168.2.10',
-    '192.168.2.15',
-    '192.168.2.6',
-    '192.168.2.12',
-    '192.168.2.13',
-    '192.168.2.1',
-    '86.95.243.199',
-    'brainfarts.rotsblog.nl',
-    'www.brainfarts.rotsblog.nl',
-    'localhost'
+
+    'www.brain-farts.nl',
+    'brain-farts.nl',
+
 ]
 
 
@@ -60,8 +54,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'crispy_forms',
     'farts',
-    'tags',
-    'dbbackup',
+    'tags'
 ]
 
 MIDDLEWARE = [
@@ -165,6 +158,3 @@ else:
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
-
-DBBACKUP_STORAGE = 'django.core.files.storage.FileSystemStorage'
-DBBACKUP_STORAGE_OPTIONS = {'location': 'backups/'}
