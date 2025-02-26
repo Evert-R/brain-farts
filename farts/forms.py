@@ -25,7 +25,8 @@ class FartForm(ModelForm):
             'type': forms.RadioSelect(),
             'category': autocomplete.ModelSelect2(url='/tags/categories-autocomplete/'),
             'topic': autocomplete.ModelSelect2(url='/tags/topics-autocomplete/'),
-            'project': autocomplete.ModelSelect2(url='/tags/projects-autocomplete/')
+            'project': autocomplete.ModelSelect2(url='/tags/projects-autocomplete/'),
+            'image': forms.ClearableFileInput(attrs={'capture': 'user'})
 
         }
         labels = {

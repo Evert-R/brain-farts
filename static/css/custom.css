@@ -118,8 +118,9 @@ h4 {
     padding-top: 4rem;
 }
 
-#top-brain-farts {
-    color: rgba(223, 168, 102, 1);
+#top-brain-farts,
+#top-brain-farts a {
+    color: rgba(223, 168, 102, 1)!important;
     font-size: 0.85rem;
     letter-spacing: 0.5rem;
     font-weight: 500;
