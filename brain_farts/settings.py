@@ -33,13 +33,7 @@ if os.environ.get('DEVELOPMENT'):
 else:
     DEBUG = False
 
-ALLOWED_HOSTS = [
-
-    'www.brain-farts.nl',
-    'brain-farts.nl',
-
-]
-
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS').split(',')
 
 # Application definition
 
