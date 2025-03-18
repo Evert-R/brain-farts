@@ -143,16 +143,19 @@ h4 {
     font-size: 2rem;
     position: fixed;
     top: 1rem;
-    right: 6vw;
+    left: calc(100vw - 13vw);
+}
+
+#add-fart-button {
+    position: fixed;
+    top: 1rem;
+    left: calc(100vw - 13vw);
+    z-index: 5000;
 }
 
 #add-fart-button i {
     color: rgba(102, 74, 39, 1);
     font-size: 2rem;
-    position: fixed;
-    top: 1rem;
-    right: 6vw;
-    z-index: 5000;
 }
 
 #fart-delete-button {
@@ -160,7 +163,7 @@ h4 {
     font-size: 2rem;
     position: fixed;
     bottom: 1rem;
-    right: 6vw;
+    left: calc(100vw - 13vw);
 }
 
 .delete-button {
