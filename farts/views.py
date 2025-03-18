@@ -5,14 +5,19 @@ from django.contrib.auth.decorators import login_required
 
 from .models import Fart
 from .forms import FartForm, FilterForm
+from .utils import predict
+
+from transformers import pipeline
+from PIL import Image
 
 @login_required
 def add_fart(request, pk=None):
     """
     Add or edit Fart
     """
-    # active_user = request.user
+
     this_type = 'NEW'
+
     if pk:
         try:
             this_fart = Fart.objects.get(pk=pk)
@@ -32,12 +37,17 @@ def add_fart(request, pk=None):
         if this_form.is_valid():
             this_fart = this_form.save(commit=False)
             this_fart.date = timezone.now()
+            if this_fart.type == 'IMAGE':
+                image = Image.open(this_fart.image)
+                this_caption = predict(image)
+                if not this_fart.text:
+                    this_fart.text = this_caption[0]
+                if not this_fart.title:
+                    this_fart.title = this_caption[0]
             this_fart.save()
             filter_form = FilterForm()
             all_farts = Fart.objects.all()
-            # this_beat.user = active_user
-            # this_beat.save()
-            # next = request.POST.get('next', '/')
+
             return render(request, "farts.html", {
                 "farts": all_farts,
                 "filter_form": filter_form
@@ -62,13 +72,9 @@ def farts(request):
         if filter_farts.is_valid():
             try:
                 filter_types = filter_farts.cleaned_data['type']
-                print(filter_types)
                 for filter_type in filter_types:
-                    print(filter_type)
                     filtered_type = filter_type
                     all_farts = all_farts.filter(type=filter_type)
-                #filter_form.fields['type'].initial = filter_types
-
             except:
                 pass
             try:
