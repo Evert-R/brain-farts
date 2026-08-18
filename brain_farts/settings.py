@@ -14,7 +14,10 @@ from pathlib import Path
 
 # Load local environment variables if we run local
 import os
-import env
+try:
+    import env
+except ModuleNotFoundError:
+    pass
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -28,10 +31,18 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-if os.environ.get('DEVELOPMENT'):
-    DEBUG = True
-else:
-    DEBUG = False
+
+DEBUG = bool(os.environ.get('DEBUG'))
+DEVELOPMENT = bool(os.environ.get('DEVELOPMENT'))
+if not DEVELOPMENT:
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
+    SECURE_SSL_REDIRECT = False   # nginx already redirects; flip to True if you prefer Django to
+    SECURE_HSTS_SECONDS = 3600    # raise to 31536000 once you are sure HTTPS works
+    SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+    X_FRAME_OPTIONS = 'DENY'
+
 
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS').split(',')
 
@@ -133,18 +144,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATICFILES_LOCATION = 'static'
 STATIC_URL = '/static/'
-
+STATICFILES_DIRS = [BASE_DIR / 'static']          # your own css/js/img
+STATIC_ROOT = BASE_DIR / 'staticfiles'            # collectstatic target, nginx serves this
 MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / "media/"
-
-if os.environ.get('DEVELOPMENT'):
-    STATICFILES_DIRS = [
-        BASE_DIR / "static"
-    ]
-else:
-    STATIC_ROOT = BASE_DIR / "static/"
+MEDIA_ROOT = BASE_DIR / 'media'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
